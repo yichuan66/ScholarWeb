@@ -94,8 +94,6 @@ class WikipediaScholarSpider(scrapy.Spider):
         with open('scholars_round3/%s' % filename, 'w') as f:
             f.write(json.dumps(result))
 
-        self.log('Saved file %s' % filename)
-
         for item in [row_influenced_by, row_influenced]:
             if item:
                 for href in item.css('a::attr(href)'):
