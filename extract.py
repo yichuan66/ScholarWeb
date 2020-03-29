@@ -17,7 +17,7 @@ from datetime import datetime
 class WikipediaScholarSpider(scrapy.Spider):
     name = 'wiki_scholar'
     start_urls = [
-        'https://en.wikipedia.org/wiki/Socrates',
+        'https://en.wikipedia.org/wiki/Herbert_A._Simon',
     ]
 
     def try_parsing_date(self, text):
@@ -91,7 +91,7 @@ class WikipediaScholarSpider(scrapy.Spider):
 
         filename = result['name'] + '.json'
 
-        with open('scholars_round3/%s' % filename, 'w') as f:
+        with open('scholars_round4/%s' % filename, 'w') as f:
             f.write(json.dumps(result))
 
         for item in [row_influenced_by, row_influenced]:
